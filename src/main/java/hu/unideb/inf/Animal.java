@@ -1,9 +1,15 @@
 package hu.unideb.inf;
 
+import javax.persistence.*;
+
+@Entity
 public class Animal {
+    @Id
+    @GeneratedValue
     long id;
     String name;
     int age;
+    @Enumerated(EnumType.STRING)
     GenderType gender;
 
     public enum GenderType{
