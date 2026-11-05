@@ -1,5 +1,7 @@
 package hu.unideb.inf;
 
+import org.hibernate.annotations.Cascade;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -12,6 +14,7 @@ public class Zoo {
     String name;
     @OneToMany
     @JoinColumn(name = "zoo_id")
+    @Cascade(org.hibernate.annotations.CascadeType.ALL)
     List<Animal> animals = new ArrayList<>();
 
     public long getId() {
