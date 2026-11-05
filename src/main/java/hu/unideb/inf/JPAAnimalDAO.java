@@ -18,6 +18,13 @@ public class JPAAnimalDAO implements AnimalDAO{
     }
 
     @Override
+    public void saveZoo(Zoo zoo) {
+        entityManager.getTransaction().begin();
+        entityManager.persist(zoo);
+        entityManager.getTransaction().commit();
+    }
+
+    @Override
     public List<Animal> getAllAnimals() {
         TypedQuery<Animal> query = entityManager.createQuery(
                 "SELECT a FROM Animal a", Animal.class);

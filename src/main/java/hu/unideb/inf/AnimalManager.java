@@ -13,5 +13,11 @@ public class AnimalManager {
 
         animalDAO.saveAnimal(animal);
         animalDAO.saveAnimal(animal2);
+
+        Zoo zoo = new Zoo();
+        zoo.setName("Debrecen Zoo");
+
+        zoo.getAnimals().add(animal);
+        zoo.getAnimals().add(animal2);
     }
 }

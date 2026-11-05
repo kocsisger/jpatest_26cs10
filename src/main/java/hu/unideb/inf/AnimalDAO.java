@@ -6,6 +6,9 @@ public interface AnimalDAO {
     //C
     public void saveAnimal(Animal a);
 
+    //C
+    public void saveZoo(Zoo zoo);
+
     //R
     public List<Animal> getAllAnimals();
 

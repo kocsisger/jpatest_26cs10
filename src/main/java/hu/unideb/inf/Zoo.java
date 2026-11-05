@@ -1,8 +1,7 @@
 package hu.unideb.inf;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -11,7 +10,9 @@ public class Zoo {
     @GeneratedValue
     long id;
     String name;
-    List<Animal> animals;
+    @OneToMany
+    @JoinColumn(name = "zoo_id")
+    List<Animal> animals = new ArrayList<>();
 
     public long getId() {
         return id;

@@ -9,6 +9,11 @@ public class TerminalAnimalDAO implements AnimalDAO{
     }
 
     @Override
+    public void saveZoo(Zoo zoo) {
+
+    }
+
+    @Override
     public List<Animal> getAllAnimals() {
         return List.of();
     }
